@@ -6,13 +6,16 @@ header {
     background-color: hsl(240, 50%, 90%);
 }
 
-h1 {
-    font-size: 2rem;
-}
-
 main {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 50vh;
+}
+
+main section {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    width: 30rem;
 }

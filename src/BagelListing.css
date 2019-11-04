@@ -1,0 +1,15 @@
+.bagel-listing {
+    padding: 4rem;
+    box-shadow: 0 3px 5px hsl(0, 0%, 50%);
+    margin-bottom: 1rem;
+}
+
+.bagel-listing p {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.bagel-listing .type {
+    font-weight: 700;
+}

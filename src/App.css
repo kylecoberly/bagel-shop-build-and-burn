@@ -1,0 +1,18 @@
+header, main {
+    padding: 2rem;
+}
+
+header {
+    background-color: hsl(240, 50%, 90%);
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+}

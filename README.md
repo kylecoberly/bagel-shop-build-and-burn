@@ -68,6 +68,17 @@ Build and rebuild each of the stories until you can do it based solely on the st
 
 ### As a customer, I want to filter the list of bagels based on a search term
 
+* `git checkout -b filter-bagels 01f1c`
+* Add a form above the bagel list with a single text input with the placholder text "Find bagel" and no submit button
+* Binding the input's value to state and update state on input change
+* Create a computed property for filtered bagels that only returns bagel names _or_ ratings that include the value of the input 
+* Pass the computed property into the `BagelList` component instead of all the bagels
+* Style the input to be visually consistent with the inputs on the new bagel form
+* Extract the form into a component called `BagelFilter`
+* Commit changes and merge to master
+* Do a production build
+* Deploy the site
+
 ### As an admin, I want to be able to delete bagels
 
 ### As a customer, I want to be able to edit bagels

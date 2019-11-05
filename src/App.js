@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import "./App.css"
 import BagelList from "./BagelList"
 import BagelForm from "./BagelForm"
+import BagelFilter from "./BagelFilter"
 
 const BASE_URL = "https://bagel-api-fis.herokuapp.com"
 
@@ -9,6 +10,7 @@ export default class App extends Component {
     state = {
         bagels: [],
         isNewFormShowing: false,
+        searchTerm: "",
     }
     componentDidMount(){
         const url = `${BASE_URL}/bagels`
@@ -41,6 +43,20 @@ export default class App extends Component {
             isNewFormShowing: !this.state.isNewFormShowing
         })
     }
+    updateSearchTerm = searchTerm => {
+        this.setState({ searchTerm })
+    }
+    filteredBagels = () => {
+        return this.state.bagels.filter(bagel => {
+            return (bagel.type
+                .toLowerCase()
+                .includes(this.state.searchTerm)
+            ) || (bagel.rating
+                .toString()
+                .includes(this.state.searchTerm)
+            )
+        })
+    }
     render(){
         return (
             <div className="App">
@@ -48,7 +64,11 @@ export default class App extends Component {
                     <h1>Bagel Shop</h1>
                 </header>
                 <main>
-                    <BagelList bagels={this.state.bagels} />
+                    <BagelFilter
+                        searchTerm={this.state.searchTerm}
+                        updateSearchTerm={this.updateSearchTerm}
+                    />
+                    <BagelList bagels={this.filteredBagels()} />
                     <button className="toggle-new-form" onClick={this.toggleNewForm}>
                         <span>
                         {

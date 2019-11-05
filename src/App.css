@@ -33,3 +33,7 @@ main section {
     font-weight: 700;
     font-size: 24px;
 }
+
+.bagel-filter {
+    width: 30rem;
+}

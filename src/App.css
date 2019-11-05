@@ -8,6 +8,7 @@ header {
 
 main {
     display: flex;
+    flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
     min-height: 50vh;
@@ -18,4 +19,17 @@ main section {
     flex-flow: column nowrap;
     align-items: center;
     width: 30rem;
+}
+
+.toggle-new-form {
+    align-self: flex-end;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: hsl(220, 50%, 50%);
+    border: none;
+    color: #fff;
+    font-weight: 700;
+    font-size: 24px;
 }

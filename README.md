@@ -50,6 +50,22 @@ Build and rebuild each of the stories until you can do it based solely on the st
 
 ### As an admin, I want to add bagels to the list
 
+* `git checkout -b add-bagels a951f`
+* Create a new bagel section at the bottom of the `App` component with the heading "Add a new bagel"
+* Add a form to the bottom of the new section that accepts a type and a rating between 1 and 10
+* Bind the form values to state
+* Make the forms update state
+* When the form is submitted, post the bagel data to the correct endpoint, add the returned bagel to state, and reset the form
+* Style the form to make give the inputs a consistent size and padding
+* Make the form render conditionally when a `+` button is clicked at the bottom of the form
+* When the form is rendered, change the `+` to a `-`
+* Style the toggle button as a circle
+* When a form is submitted, hide the form
+* Move the form and any styles into a `BagelForm` component
+* Commit changes and merge to master
+* Do a production build
+* Deploy the site
+
 ### As a customer, I want to filter the list of bagels based on a search term
 
 ### As an admin, I want to be able to delete bagels

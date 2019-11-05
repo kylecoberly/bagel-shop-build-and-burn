@@ -8,16 +8,21 @@ export default class App extends Component {
             rating: 5,
         },
     }
+    componentDidMount(){
+        this.props.defaultValues && this.setState({
+            newBagel: this.props.defaultValues
+        })
+    }
     handleChange = event => {
         const newBagel = this.state.newBagel
         newBagel[event.target.name] = event.target.value
         this.setState({ newBagel })
     }
-    addBagel = event => {
+    submitHandler = event => {
         event.preventDefault()
         const { type, rating } = this.state.newBagel
 
-        this.props.addBagel({ type, rating })
+        this.props.submitHandler({ type, rating })
 
         this.setState({
             newBagel: {
@@ -28,7 +33,7 @@ export default class App extends Component {
     }
     render(){
         return (
-            <form className="bagel-form" onSubmit={this.addBagel}>
+            <form className="bagel-form" onSubmit={this.submitHandler}>
                 <input
                     name="type"
                     type="text"
@@ -48,7 +53,7 @@ export default class App extends Component {
                     onChange={this.handleChange}
                 />
     
-                <input type="submit" value="Add" />
+                <input type="submit" value={this.props.submitLabel} />
             </form>
         )
     }

@@ -8,6 +8,7 @@ export default function BagelList(props){
             <BagelListing
                 bagel={bagel}
                 deleteBagel={props.deleteBagel}
+                editBagel={props.editBagel}
             />
         </li>
     })

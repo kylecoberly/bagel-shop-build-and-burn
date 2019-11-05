@@ -9,6 +9,7 @@
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 2rem;
 }
 
 .bagel-listing .type {
@@ -27,6 +28,11 @@
     cursor: pointer;
 }
 
-.bagel-listing i:hover {
+.bagel-listing i.fa-times:hover {
     color: hsl(0, 40%, 50%);
+}
+
+.bagel-listing i.fa-edit:hover,
+.bagel-listing i.fa-edit.active {
+    color: hsl(220, 40%, 50%);
 }

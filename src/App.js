@@ -13,6 +13,9 @@ export default class App extends Component {
         searchTerm: "",
     }
     componentDidMount(){
+        this.listBagels()
+    }
+    listBagels = () => {
         const url = `${BASE_URL}/bagels`
         fetch(url)
             .then(response => response.json())
@@ -35,6 +38,25 @@ export default class App extends Component {
             this.setState({
                 bagels: [...this.state.bagels, bagel],
                 isNewFormShowing: false,
+            })
+        })
+    }
+    editBagel = (id, bagel) => {
+        const url = `${BASE_URL}/bagels/${id}`
+        fetch(url, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(bagel),
+        }).then(() => {
+            this.setState({
+                bagels: this.state.bagels.map(existingBagel => {
+                    if (existingBagel.id === id){
+                         Object.assign(existingBagel, bagel)
+                    }
+                    return existingBagel
+                })
             })
         })
     }
@@ -87,6 +109,7 @@ export default class App extends Component {
                     <BagelList
                         bagels={this.filteredBagels()}
                         deleteBagel={this.deleteBagel}
+                        editBagel={this.editBagel}
                     />
                     <button className="toggle-new-form" onClick={this.toggleNewForm}>
                         <span>
@@ -102,7 +125,10 @@ export default class App extends Component {
                             ? (
                                 <section>
                                     <h2>Add a new bagel</h2>
-                                    <BagelForm addBagel={this.addBagel} />
+                                    <BagelForm
+                                        addBagel={this.addBagel}
+                                        submitLabel="Add"
+                                    />
                                 </section>
                             )
                             : null

@@ -37,3 +37,7 @@ main section {
 .bagel-filter {
     width: 30rem;
 }
+
+.App h2 {
+    align-self: flex-start;
+}

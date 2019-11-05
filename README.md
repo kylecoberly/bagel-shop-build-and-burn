@@ -1,6 +1,8 @@
 # Bagel Shop Build and Burn
 
-Build and rebuild each of the stories until you can do it based solely on the story label.
+Build and rebuild each of the stories until you can do it based solely on the story label. Check out the [finished site](https://bagel-shop-fis.firebaseapp.com/) for reference. You can also see the completed code at each commit to compare with your solution. 
+
+You can checkout specific commits to practice particular steps or start part-way through the build. These commits may not have all of the instructions, so make a copy of this file to reference or refer to the README on GitHub before you start.
 
 ## Definition Of Done
 
@@ -92,3 +94,14 @@ Build and rebuild each of the stories until you can do it based solely on the st
 
 ### As a customer, I want to be able to edit bagels
 
+* `git checkout -b edit-bagels 36608`
+* Add an edit icon to the left of the cross icon on each bagel listing
+* When the icon is clicked, toggle rendering the `BagelForm` component inside the listing
+* Modify the `BagelForm` component as follows:
+    * It should accept optional default values as props and set them to state on mount
+    * It should accept a dynamic label for the submit button and pass in "Edit" in the bagel listing and "Add" in the new bagel form
+* When the edit form is submitted, it should make the appropriate API call and update state, as well as closing the edit form
+* Style the pencil icon to be grey, blue on hover, and blue while the edit form is showing
+* Commit changes and merge to master
+* Do a production build
+* Deploy the site

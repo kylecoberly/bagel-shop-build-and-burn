@@ -8,8 +8,25 @@
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
+    align-items: center;
 }
 
 .bagel-listing .type {
     font-weight: 700;
+}
+
+.bagel-listing .actions {
+    display: flex;
+    align-items: center;
+}
+
+.bagel-listing i {
+    margin-left: 1rem;
+    color: hsl(0, 0%, 50%);
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.bagel-listing i:hover {
+    color: hsl(0, 40%, 50%);
 }

@@ -5,7 +5,10 @@ import BagelListing from "./BagelListing"
 export default function BagelList(props){
     const bagels = props.bagels.map(bagel => {
         return <li key={bagel.id}>
-            <BagelListing bagel={bagel} />
+            <BagelListing
+                bagel={bagel}
+                deleteBagel={props.deleteBagel}
+            />
         </li>
     })
     return (

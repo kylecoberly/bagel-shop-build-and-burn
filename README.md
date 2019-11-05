@@ -81,5 +81,14 @@ Build and rebuild each of the stories until you can do it based solely on the st
 
 ### As an admin, I want to be able to delete bagels
 
+* `git checkout -b delete-bagels c40ef`
+* Add a glyph library to the app
+* Add a cross icon to each bagel listing
+* When the icon is clicked, delete the bagel from the server and state
+* The cross should start grey, and turn red on hover
+* Commit changes and merge to master
+* Do a production build
+* Deploy the site
+
 ### As a customer, I want to be able to edit bagels
 

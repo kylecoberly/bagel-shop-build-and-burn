@@ -38,6 +38,22 @@ export default class App extends Component {
             })
         })
     }
+    deleteBagel = id => {
+        const url = `${BASE_URL}/bagels/${id}`
+        fetch(url, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        }).then(bagel => {
+            this.setState({
+                bagels: [
+                    ...this.state.bagels
+                        .filter(bagel => bagel.id !== id)
+                ],
+            })
+        })
+    }
     toggleNewForm = () => {
         this.setState({
             isNewFormShowing: !this.state.isNewFormShowing
@@ -68,7 +84,10 @@ export default class App extends Component {
                         searchTerm={this.state.searchTerm}
                         updateSearchTerm={this.updateSearchTerm}
                     />
-                    <BagelList bagels={this.filteredBagels()} />
+                    <BagelList
+                        bagels={this.filteredBagels()}
+                        deleteBagel={this.deleteBagel}
+                    />
                     <button className="toggle-new-form" onClick={this.toggleNewForm}>
                         <span>
                         {
